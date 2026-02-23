@@ -85,9 +85,7 @@ public class ArrayList<T> implements List<T> {
     public T remove(int index) {
         checkIndex(index);
         T oldValue = elementData[index];
-        for (int i = index; i < size - 1; i++) {
-            elementData[i] = elementData[i + 1];
-        }
+        System.arraycopy(elementData, index + 1, elementData, index, size - index - 1);
         size--;
         elementData[size] = null;
         return oldValue;
