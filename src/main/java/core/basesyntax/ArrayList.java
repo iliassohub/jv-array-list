@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class ArrayList<T> implements List<T> {
-    private final static int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_CAPACITY = 10;
     private T[] elementData;
     private int size;
 
@@ -54,7 +54,7 @@ public class ArrayList<T> implements List<T> {
         elementData[index] = value;
         size++;
     }
-    @SuppressWarnings("unchecked")
+
     @Override
     public void addAll(List<T> list) {
         int newSize = size + list.size();
