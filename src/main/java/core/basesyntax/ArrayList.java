@@ -90,7 +90,7 @@ public class ArrayList<T> implements List<T> {
         elementData[size] = null;
         return oldValue;
     }
-
+    
     @Override
     public T remove(T element) {
         if (element == null) {
