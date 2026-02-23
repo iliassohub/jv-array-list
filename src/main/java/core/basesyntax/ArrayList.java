@@ -36,17 +36,17 @@ public class ArrayList<T> implements List<T> {
     @Override
     public void add(T value) {
         if (size == elementData.length) {
-           grow();
+            grow();
         }
         elementData[size] = value;
         size++;
-        }
+    }
 
     @Override
     public void add(T value, int index) {
         checkIndexForAdd(index);
         if (size == elementData.length) {
-           grow();
+            grow();
         }
         for (int i = size; i > index; i--) {
             elementData[i] = elementData[i - 1];
@@ -54,7 +54,7 @@ public class ArrayList<T> implements List<T> {
         elementData[index] = value;
         size++;
     }
-
+    @SuppressWarnings("unchecked")
     @Override
     public void addAll(List<T> list) {
         int newSize = size + list.size();
@@ -77,13 +77,13 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public void set(T value, int index) {
-        checkIndex(index );
+        checkIndex(index);
         elementData[index] = value;
     }
 
     @Override
     public T remove(int index) {
-    checkIndex(index);
+        checkIndex(index);
         T oldValue = elementData[index];
         for (int i = index; i < size - 1; i++) {
             elementData[i] = elementData[i + 1];
@@ -96,9 +96,9 @@ public class ArrayList<T> implements List<T> {
     @Override
     public T remove(T element) {
         if (element == null) {
-        for (int i = 0; i < size; i++) {
-            if (elementData[i] == null) {
-                return remove(i);
+            for (int i = 0; i < size; i++) {
+                if (elementData[i] == null) {
+                    return remove(i);
                 }
             }
         } else {
